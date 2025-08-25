@@ -4,6 +4,7 @@ function init() {
   import("./index.product-carousel.js");
   import("./index.product-list.js");
   import("./index.animated-carousel.js");
+  import("./index.contact-form.js");
 }
 
 const totalPartials = document.querySelectorAll(
