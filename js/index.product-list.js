@@ -1,0 +1,54 @@
+const products = [
+    {
+        id: 1,
+        name: "Baby Yoda",
+        price: 19.99,
+        image: 'img/baby-yoda.svg',
+        description: "A cute baby Yoda sticker that captures the charm and innocence of the beloved character from the Star Wars universe. Perfect for decorating laptops, notebooks, or water bottles, this sticker is sure to bring a smile to any fan's face and add a touch of galactic fun to your belongings."
+    },
+    {
+        id: 2,
+        name: "Banana",
+        price: 9.99,
+        image: 'img/banana.svg',
+        description: "A fun banana sticker featuring a bright and cheerful design that stands out wherever you place it. Ideal for fruit lovers or anyone who enjoys playful, quirky accessories, this sticker is durable and perfect for personalizing your favorite items with a splash of color and humor."
+    },
+    {
+        id: 3,
+        name: "Girl",
+        price: 14.99,
+        image: 'img/girl.svg',
+        description: "A stylish girl sticker showcasing a modern and fashionable character with vibrant colors and unique details. This sticker is great for expressing individuality and creativity, making it a wonderful addition to your collection or a thoughtful gift for friends who appreciate trendy designs."
+    },
+    {
+        id: 4,
+        name: "Viking",
+        price: 12.99,
+        image: 'img/viking.svg',
+        description: "A fierce viking sticker that embodies strength and adventure, featuring a bold character with traditional viking elements. Whether you love history, mythology, or simply want to add a touch of bravery to your gear, this sticker is a fantastic choice for any enthusiast."
+    },
+];
+
+function renderProductList(products) {
+    const productHtmls = [];
+    for (const product of products) {
+        productHtmls.push(`
+        <article class="products__item">
+            <img class="products__image" src="${product.image}" alt="${product.name}">
+            <h3 class="products__name">${product.name}</h3>
+            <p class="products__description">${product.description}</p>
+            <div class="products__actions">
+                <button class="products__button products__button--info button button-card">
+                    Info
+                </button>
+                <button class="products__button products__button--buy button button-card">
+                    Buy - ${product.price}
+                </button>
+            </div>
+        </article>`);
+    }
+    const productsContainer = document.querySelector('.products__list');
+    productsContainer.innerHTML = productHtmls.join('');
+}
+
+renderProductList(products);
